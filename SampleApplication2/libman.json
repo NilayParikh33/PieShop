@@ -19,5 +19,11 @@
       "library": "jquery-validation-unobtrusive@3.2.12",
       "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
     }
-  ]
+  ,
+{
+  "provider": "cdnjs",
+  "library": "popper.js@2.11.8",
+  "destination": "wwwroot/lib/bootstrap/js/popper.js/"
+}
+]
 }

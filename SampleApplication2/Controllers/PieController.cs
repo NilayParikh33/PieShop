@@ -16,13 +16,14 @@ namespace SampleApplication2.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        //public IActionResult List()
-        //{
-        //    //ViewBag.CurrentCategory = "Cheese Cakes";
-        //    PieListViewModel pieListViewModel = new PieListViewModel(_pieRepository.AllPies, "All pies");
-        //    return View(pieListViewModel);
-        //}
+        public IActionResult List()
+        {
+            //ViewBag.CurrentCategory = "Cheese Cakes";
+            PieListViewModel pieListViewModel = new PieListViewModel(_pieRepository.AllPies, "All pies");
+            return View(pieListViewModel);
+        }
 
+        //This method will show List of Pies in PieList Page.
         public ViewResult List(string category)
         {
             IEnumerable<Pie> pies;
@@ -43,6 +44,7 @@ namespace SampleApplication2.Controllers
             return View(new PieListViewModel(pies, currentCategory));
         }
 
+        //This method will give Perticular Pie based on PieId.
         public IActionResult Details(int id) 
         {
             var pie = _pieRepository.GetPieById(id);
@@ -51,6 +53,7 @@ namespace SampleApplication2.Controllers
             return View(pie); 
         }
 
+        //This method will give Search Result for Pie.
         public IActionResult Search() 
         {
             return View();

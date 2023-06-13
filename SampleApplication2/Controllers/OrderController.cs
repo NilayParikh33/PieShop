@@ -22,6 +22,7 @@ namespace SampleApplication2.Controllers
             return View();
         }
 
+        //This is the Checkout method in which the Checkout Order Code is written.
         [HttpPost]
         public IActionResult Checkout(Order order)
         {
@@ -42,6 +43,7 @@ namespace SampleApplication2.Controllers
             return View(order);
         }
 
+        //This method Prints message that Checkout Completed Successfully.
         public IActionResult CheckoutComplete()
         {
             ViewBag.CheckoutCompleteMessage = "Thanks for your order. You'll soon enjoy our delicious pies!";

@@ -12,6 +12,7 @@ namespace SampleApplication2.Controllers
             _pieRepository = pieRepository;
         }
 
+        //This method will give Pies which are BestOfTheWeek in the Application's Home Page.
         public IActionResult Index()
         {
             var piesOfTheWeek = _pieRepository.PiesOfTheWeek;

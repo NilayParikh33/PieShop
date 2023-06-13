@@ -16,6 +16,7 @@ namespace SampleApplication2.Controllers.API
             _pieRepository = pieRepository;
         }
 
+        //This method will give AllPies List.
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -23,6 +24,7 @@ namespace SampleApplication2.Controllers.API
             return Ok(allPies);
         }
 
+        //This method will give Pie based on their PieId.
         [HttpGet("{id}")]
         public IActionResult GetById(int id) 
         {
@@ -31,6 +33,7 @@ namespace SampleApplication2.Controllers.API
             return Ok(_pieRepository.AllPies.Where(p => p.PieId == id));
         }
 
+        //This will give Pies data in JSON Format based on searched Pie.
         [HttpPost]
         public IActionResult SearchPies([FromBody] string searchQuery)
         {

@@ -15,6 +15,8 @@ namespace SampleApplication2.Controllers
             _shoppingCart = shoppingCart;
 
         }
+
+        //This is Index Page which will like home page for ShoppingCart Page Which will show items and their quantities.
         public ViewResult Index()
         {
             var items = _shoppingCart.GetShoppingCartItems();
@@ -25,6 +27,7 @@ namespace SampleApplication2.Controllers
             return View(shoppingCartViewModel);
         }
 
+        //This code is for Adding Pie to the ShoppingCart.
         public RedirectToActionResult AddToShoppingCart(int pieId)
         {
             var selectedPie = _pieRepository.AllPies.FirstOrDefault(p => p.PieId == pieId);
@@ -36,6 +39,7 @@ namespace SampleApplication2.Controllers
             return RedirectToAction("Index");
         }
 
+        //This code is for Remove Pie from ShoppingCart.
         public RedirectToActionResult RemoveFromShoppingCart(int pieId)
         {
             var selectedPie = _pieRepository.AllPies.FirstOrDefault(p => p.PieId == pieId);
